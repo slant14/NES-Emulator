@@ -6,11 +6,11 @@
 
 class Bus;
 
-class olc6502
+class cpu6502
 {
 public:
-    olc6502();
-    ~olc6502() = default;
+    cpu6502();
+    ~cpu6502() = default;
 
     uint8_t  a      = 0x00;
     uint8_t  x      = 0x00;
@@ -61,8 +61,8 @@ private:
     struct INSTRUCTION
     {
         std::string name;
-        uint8_t     (olc6502::*operate )(void) = nullptr;
-        uint8_t     (olc6502::*addrmode)(void) = nullptr;
+        uint8_t     (cpu6502::*operate )(void) = nullptr;
+        uint8_t     (cpu6502::*addrmode)(void) = nullptr;
         uint8_t     cycles = 0;
     };
     std::vector<INSTRUCTION> lookup;
