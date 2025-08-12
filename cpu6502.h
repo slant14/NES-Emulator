@@ -4,6 +4,10 @@
 #include <string>
 #include <map>
 
+#ifdef LOGMODE
+#include <stdio.h>
+#endif
+
 class Bus;
 
 class cpu6502
